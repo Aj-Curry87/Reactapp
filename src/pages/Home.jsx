@@ -3,9 +3,9 @@ import React from "react";
 export default function Home() {
   return (
     <div className="p-6">
-      <h2 className="text-3xl font-bold mb-4">Welcome, Antoine!</h2>
+      <h2 className="text-3xl font-bold mb-4">Welcome to your Favorite Support Desk's Favorite Support Desk!</h2>
       <p className="mb-4">
-        I'm a passionate <strong>Junior Cloud Architect</strong> and former AWS Cloud Apprentice with a love for solving user issues and streamlining infrastructure.
+        Please leave your worries at the DNS Server, whatever your problem, Here, lies the Solution
       </p>
       <h3 className="text-2xl font-semibold mb-2">Certifications</h3>
       <ul className="list-disc list-inside">
