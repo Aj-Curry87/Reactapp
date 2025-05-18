@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import Navbar from "./components/Navbar";
+import { useState, useEffect } from "react";
 import Home from "./pages/Home";
 import KnowledgeBase from "./pages/KnowledgeBase";
 import Dashboard from "./pages/Dashboard";
+import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
 
 export default function App() {
