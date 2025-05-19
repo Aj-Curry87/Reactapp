@@ -1,19 +1,21 @@
-import { Link, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-export default function Navbar({ toggleDark, dark }) {
-  const location = useLocation(); // ✅ get current path
+export default function Dashboard({ toggleDark, dark }) {
 
   const navLink = (path, label) => (
-    <Link
+    <NavLink
       to={path}
-      className={`relative px-2 py-1 rounded transition font-medium
-        ${location.pathname === path
+      end
+      className={({ isActive }) =>
+        `relative px-2 py-1 rounded transition font-medium
+        ${isActive
           ? "text-indigo-600 font-semibold after:scale-x-100"
           : "text-gray-700 dark:text-gray-200 hover:text-indigo-500"}
-        after:block after:h-[2px] after:bg-indigo-600 after:origin-left after:transition-transform after:scale-x-0 hover:after:scale-x-100`}
+        after:block after:h-[2px] after:bg-indigo-600 after:origin-left after:transition-transform after:scale-x-0 hover:after:scale-x-100`
+      }
     >
       {label}
-    </Link>
+    </NavLink>
   );
 
   return (
