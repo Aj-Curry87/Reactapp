@@ -1,39 +1,34 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
+import avatar from "../assets/avatar.png"; // Optional image
 
 export default function Home() {
-  const [dark, setDark] = useState(false);
-
-  const toggleDark = () => setDark((prev) => !prev);
-
-  const navLink = (to, label) => (
-    <Link to={to} className="text-indigo-600 hover:underline">
-      {label}
-    </Link>
-  );
-
   return (
-    <div className="p-6">
-      <h2 className="text-3xl font-bold mb-4">Welcome to your Favorite Support Desk's Favorite Support Desk!</h2>
-      <p className="mb-4">
-        Please leave your worries at the DNS Server, whatever your problem, Here, lies the Solution
+    <div className="max-w-6xl mx-auto p-6 text-center">
+      <img
+        src={avatar}
+        alt="Support Hero"
+        className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-indigo-500"
+      />
+      <h1 className="text-4xl font-bold mb-2">
+        Welcome to your Favorite Support Desk's Favorite Support Desk!
+      </h1>
+      <p className="text-gray-600 dark:text-gray-300 mb-6">
+        Your all-in-one solution hub for IT fixes, quick tips, and internal tools.
       </p>
-
-      <h3 className="text-2xl font-semibold mb-2">How can we help?</h3>
-      <ul className="list-disc list-inside">
-        <li>{navLink("/", "Home")}</li>
-        <li>{navLink("/knowledge", "Knowledge Base")}</li>
-        <li>{navLink("/dashboard", "Dashboard")}</li>
-        <li>
-          <button
-            onClick={toggleDark}
-            className="px-2 py-1 bg-indigo-500 text-white rounded hover:bg-indigo-600 transition"
-            aria-label="Toggle Dark Mode"
-          >
-            {dark ? "Light Mode" : "Dark Mode"}
-          </button>
-        </li>
-      </ul>
+      <div className="flex justify-center gap-4">
+        <Link
+          to="/dashboard"
+          className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition"
+        >
+          Go to Dashboard
+        </Link>
+        <Link
+          to="/knowledge"
+          className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white px-4 py-2 rounded hover:bg-gray-300 dark:hover:bg-gray-600 transition"
+        >
+          Browse Knowledge Base
+        </Link>
+      </div>
     </div>
   );
 }
